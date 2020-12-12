@@ -1,4 +1,4 @@
-//Adia's Calculate this Day Calendar Planner
+console.log("script");
 
 $(document).ready(function(){
     var time= moment().format("h:mm:ss");
