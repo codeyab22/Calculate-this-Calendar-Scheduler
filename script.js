@@ -27,10 +27,10 @@ var timeBlockcontainer = $(".container");
 var todaysDate= $("#currentDay"); 
 
 //Formed current date
-todaysDateEl.text(moment().format("dddd, do, YYYY")); 
+todaysDate.text(moment().format("dddd, do, YYYY")); 
 
 //Formed time blocks
-let timesArr= ["9AM","10AM", "11AM", "12PM"]; 
+var timesArr= ["9AM","10AM", "11AM", "12PM"]; 
 
 for (let i=1; i<timesArr.length; i++){
     var newTimeBlock= $("#9AM").clone();
@@ -59,10 +59,10 @@ function populateSavedEvents(){
     }
     
     for (let i=0; i<locationArr.length; i++) {
-        var timeBlockElid = "#"+locationArr[i]; 
+        var timeBlockid = "#"+locationArr[i]; 
         var timeBlock = $(timeBlockid).children(".row").children("textarea"); 
         $(timeBlockid).children(".row").children("btn").attr("data-event", "yes"); 
-        timeBlockEl.val(savedDayPlans[i].event); 
+        timeBlock.val(savedDayPlans[i].event); 
     }    
 }
 
@@ -149,7 +149,7 @@ $(".time-block").delegate("button", "click", function(){
 var timeOfDay= moment().format("HighFive"); 
 
     //Need to get class and select past/present/future and change based on time of day
-let allTimeBlockEl= $(".time-block"); 
+var allTimeBlock= $(".time-block"); 
 
  for (let i=0; i<allTimeBlockEl.length; i++){
     var timeBlock= $(allTimeBlock[i]); 
