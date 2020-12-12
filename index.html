@@ -17,81 +17,81 @@
       <p class='lead'>A edgy calendar app for scheduling and spicing the time to workday </p>
       <p id='currentDay' class='lead'></p>
     </header>
-    <div class='container'>
+    <div class="container">
     
-  <div class ="row time-block"data-hour=9></div>
-    <div class = "col-md-1 hour"= 9am>
+  <div class="row time-block"data-hour=9></div>
+    <div class="col-md-1 hour"= 9 am>
     <textarea class="col-md-10 description" name="textarea"></textarea>
-    <button class="btn saveBtn col-md-1" <i class="fas fa-sd-card"</i>
-    </button>
-    </div>
+      <button class="btn saveBtn col-md-1" <i class="fas fa-sd-card"</i>
+      </button>
+      </div>
     
-<div class="row time-block"data-hour=10></div>
-    <div class="col-md-1 hour">10am</div>
+<div class="row time-block"data-hour=10>
+    <div class="col-md-1 hour" = 10 am</div>
     <textarea class="col-md-10 description" name="textarea"></textarea>
     <button class="btn saveBtn col-md-1" <i class="fas fa-sd-card"</i>
     </button>
     </div>
    
-    <div class="row time-block data-hour=11>
-    <div class="col-md-1 hour">11am</div>
-    <textarea class="col-md-10 description" name="textarea"></textarea>
+ <div class="row time-block data-hour=11>
+<div class="col-md-1 hour" = 11 am</div>
+ <textarea class="col-md-10 description" name="textarea"></textarea>
     <button class="btn saveBtn col-md-1" <i class="fas fa-sd-card"></i>
     </button>
     </div>
   
-  <div class="row time-block"data-hour=12>
-    <div class ="col-md-1 hour">12am</div>
-    <textarea class="col-md-10 description" name="textarea"></textarea>
-    <button class="btn saveBtn col-md-1" <i class="fas fa-sd-card"></i>
+<div class="row time-block"data-hour=12>
+    <div class="col-md-1 hour" = 12 am</div>
+    <textarea class="col-md-10 description" name="textarea"</textarea>
+    <button class="btn saveBtn col-md-1"<i class="fas fa-sd-card"></i>
     </button>
     </div>
-    
-    
-    </div>
-    <script>
-    $(document).readyfunction() {
+
+</div>
+<script>  
+$(document).readyfunction() {
     var dateTimeDiv = $(<"div">)
-    var currentDateTime = current().format("MMMM Do YYYY')
+    var currentDateTime = moment().format('MMMM Do YYYY')
     
+     //Starting with the current time and day
     dateTimeDiv.html(currentDateTime);
-    $('currentday').append(dateTimeDiv);
+    $('#currentday').append(dateTimeDiv);
     
     //Function to styling
     function checkTime() {
-    var now = moment().hours()
+    var now = parsInt().hours()
+}
     console.log(now)
-    
+   
     $(".time-block").each(function() {
-    var blochHour=parseInt(S(this).attr("data-hour")
+var blochHour = parseInt($(this).attr("data-hour");
     console.log(blockHour)
-    if(blockHour < row)(
+}else if(blockHour == now)(
     $(this).addClass("past")
-    }else if(blockHour === now)(
+  }else if(blockHour === now)(
     $(this).removeClass("past")
      $(this).addClass("present")
  }else {
   $(this).removeClass("past")
-  $(this).addClass("present")
-   $(this).addClass("future")
+  $(this).removeClass("present")
+  $(this).addClass("future")
    }
    }}
    }
    checkTime()
    
    var toDoItem = $(".description")
-   $(".saveaveBtn).on("click, function() {
+   $(".saveBtn").on("click", function() {
    console.log("save button clicked")
-   localStorage.setItem(To do Item, ToDoItem)
-   })
-   
-   )}
+   localStorage.setItem("To do Item", ToDoItem)
+   }
+})
+)}
    
    </script>
-
-<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
    </body>
-   </html>
-     
-     
-    
+</html>
