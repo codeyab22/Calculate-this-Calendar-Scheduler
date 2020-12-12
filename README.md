@@ -11,5 +11,5 @@ Problem(s) it solves: syntax/grammatical errors, spacing/formatting, argument li
 
 Check out this link to my website:
 This is a relaxed design of my website:
-![image](https://drive.google.com/uc?export=view&id=/d/1IWwNB6Sah60NiqWbb0-bJSXCHh3Pzuwp)
+![image](https://drive.google.com/uc?export=view&id=12In7-_JqZ9-6YF8DfItRexrBsbinYKfe)
 
