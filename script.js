@@ -1,7 +1,7 @@
 console.log("script");
 
 $(document).ready(function(){
-    var time= moment().format("h:mm:ss");
+    var time = moment().format("h:mm:ss");
     var timeSplit = time.split(":"); 
     var minutesToCool= 59 - parseInt(timeSplit[1]); 
     var secondsToCool= 60- parseInt(timeSplit[2]); 
