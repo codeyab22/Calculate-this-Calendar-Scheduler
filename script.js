@@ -32,7 +32,7 @@ todaysDate.text(moment().format("dddd, do, YYYY"));
 //Formed time blocks
 var timesArr= ["9AM","10AM", "11AM", "12PM"]; 
 
-for (let i=1; i<timesArr.length; i++){
+for (var i=1; i<timesArr.length; i++){
     var newTimeBlock= $("#9AM").clone();
     newTimeBlock.attr("id", timesArr[i]); 
     newtimeBlock.children(".row").attr("style", "white-space: pre-Wrap"); 
@@ -106,10 +106,10 @@ function clearEvent(isClear,index,location,btn){
 
 function changeEvent(time, index, location, btn,eventInput, isPopulated){
     if (eventInput.trim() === "" && isPopulated === "yes"){
-        let isSaved= confirm("At "+time+": Would you like to clear the event '"+savedDayPlans[index].event+"' ?"); 
+        var isSaved= confirm("At "+time+": Would you like to clear the event '"+savedDayPlans[index].event+"' ?"); 
         clearEvent(isSaved,index,location, btn); 
     } else if (eventInput.trim() !== "" && isPopulated ==="none"){
-        let isSaved= confirm("At "+time+": Would you like to add the event '"+eventInput+ "'?"); 
+        var isSaved= confirm("At "+time+": Would you like to add the event '"+eventInput+ "'?"); 
         if(isSaved) {
             saveEvent(time, eventInput); 
         }else {
@@ -117,7 +117,7 @@ function changeEvent(time, index, location, btn,eventInput, isPopulated){
         }
     } else if (eventInput.trim() !== "" && isPopulated=== "yes"){
         if (savedDayPlans[index].event !== eventInput){     
-            let isSaved= confirm("At "+time+": Would you like to change the event from '"+savedDayPlans[index].event+"' to '"+eventInput+"'?"); 
+            var isSaved= confirm("At "+time+": Would you like to change the event from '"+savedDayPlans[index].event+"' to '"+eventInput+"'?"); 
             if(isSaved) {
                 removeEvent(index); 
                 saveEvent(time, eventInput); 
