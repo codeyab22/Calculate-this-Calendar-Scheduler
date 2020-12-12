@@ -1,5 +1,4 @@
-This is the fifth project. This is about creating the plan scheduler. Using API keys and activating them on HTML, CSS and JavaScript, it allows two 
-or more applications to transfer, store, manipulate databases, make requests,  before sending responses to the server. Since I am used JQuery and Bootstrap, I am going to create into a calendar app that makes sense. 
+This is the fifth project. This is about creating day planner app for anyone that needs it. Using API keys and activating them on HTML, CSS and JavaScript, it allows two or more applications to transfer, store, manipulate databases, make requests,  before sending responses to the server. Since I am used JQuery and Bootstrap, I am going to create into a calendar app that makes sense. 
  
 
 Motivation(s)
