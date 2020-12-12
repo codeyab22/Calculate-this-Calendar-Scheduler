@@ -58,7 +58,7 @@ function populateSavedEvents(){
         }
     }
     
-    for (let i=0; i<locationArr.length; i++) {
+    for (var i=0; i<locationArr.length; i++) {
         var timeBlockid = "#"+locationArr[i]; 
         var timeBlock = $(timeBlockid).children(".row").children("textarea"); 
         $(timeBlockid).children(".row").children("btn").attr("data-event", "yes"); 
@@ -151,7 +151,7 @@ var timeOfDay= moment().format("HighFive");
     //Need to get class and select past/present/future and change based on time of day
 var allTimeBlock= $(".time-block"); 
 
- for (let i=0; i<allTimeBlockEl.length; i++){
+ for (let i=0; i<allTimeBlock.length; i++){
     var timeBlock= $(allTimeBlock[i]); 
     var timeBlockId= timeBlock.attr("id");
     var timeBlockTextarea=timeBlock.children(".row").children("textarea");  
@@ -177,7 +177,7 @@ $(".time-block").find("button").attr("data-event", "none");
 
 // Save all functions to save events
  $("#saveAll").on("click", function(){   
-     for( let i=0; i < allTimeBlock.length; i++) {
+     for( var i=0; i < allTimeBlock.length; i++) {
         var timeBlock= $(allTimeBlock[i]); 
         var time= timeBlock.attr("id");
         var location=timeBlock.children(".row").children("textarea"); 
