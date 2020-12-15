@@ -1,3 +1,5 @@
+//Adia's Calculate-this-Day-Calendar-Planner
+
 console.log("script");
 
 $(document).ready(function(){
@@ -30,7 +32,7 @@ var todaysDate= $("#currentDay");
 todaysDate.text(moment().format("dddd, do, YYYY")); 
 
 //Formed time blocks
-var timesArr= ["9AM","10AM", "11AM", "12PM"]; 
+var timesArr= ["9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"]; 
 
 for (var i=1; i<timesArr.length; i++){
     var newTimeBlock= $("#9AM").clone();
