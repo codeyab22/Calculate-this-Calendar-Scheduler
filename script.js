@@ -1,5 +1,4 @@
 //Adia's Calculate-this-Day-Calendar-Planner
-
 console.log("script");
 
 $(document).ready(function(){
@@ -10,12 +9,12 @@ $(document).ready(function(){
     var timeToCool= minutesToCool*60 + secondsToCool; 
     var secondsElapsed=0; 
     var timerUntilStartReloading= setInterval(function(){ 
-        secondsElapsed++
-        if (secondsElapsed === timeToRefresh){
-            console.log(moment()); 
-            var isReloading= confirm("Lucky is your new hour! Would you like to reload the page?"); 
+secondsElapsed++
+ if (secondsElapsed === timeToCool){
+ console.log(moment()); 
+  var isReloading= confirm("Lucky is your new hour! Would you like to reload the page?"); 
             if (isReloading) {
-                window.location.reload(true);
+window.location.reload(true);
             } else {
                 alert("Longer than usual. Reload the page again to start."); 
             }
@@ -74,7 +73,7 @@ populateSavedEvents();
 
 function clearLocalStorage() {
     savedDayPlans=[]; 
-    localStorage.setItem("savedDayPlans", savedDayPlans); 
+    localStorage.setItem("savedDayPlans", "test"); 
 }
 
 // Formed a function saveEvent Save entries in the planner to local storage
@@ -84,7 +83,7 @@ function saveEvent(time,input){
     savedDayPlans.push({"time":time,
     "event": input
     }); 
-    localStorage.setItem("savedDayPlans", JSON.stringify(savedDayPlans)); 
+    localStorage.setItem("savedDayPlans", "test"); 
 }
 
 //Formed a RemoveEvent
@@ -95,10 +94,9 @@ function removeEvent(index){
 
 function clearEvent(isClear,index,location,btn){
     if (isClear) {
-        alert("You cleared this event");
         removeEvent(index); 
         btn.attr("data-event", "none");  
-        localStorage.setItem("savedDayPlans", JSON.stringify(savedDayPlans));
+        localStorage.setItem("savedDayPlans", "test");
     }  else {
         location.val(savedDayPlans[index].event); 
         alert("Event was not cleared"); 
@@ -188,7 +186,7 @@ $(".time-block").find("button").attr("data-event", "none");
         var isPopulated= btn.attr("data-event");
         var index= locationArr.indexOf(time);
     
-        changeEvent(time, index, location,buttonEl, eventInput,isPopulated);  
+        changeEvent(time, index, location,button, eventInput,isPopulated);  
         }
     populateSavedEvents(); 
     alert("No unsaved changed. Restored"); 
