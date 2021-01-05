@@ -22,6 +22,28 @@ window.location.reload(true);
     },1000);
 }); 
 
+
+//Eventlisteners
+$('.saveEvent').on('click', function() {
+ console.log("Saved!")
+});
+
+$('.removeEvent').on('click', function() {
+ console.log("Event Removed")
+});
+
+$('.clearEvent').on('click', function() {
+ console.log("Event all cleared!")
+});
+
+$('.changeEvent').on('click', function() {
+ console.log("Event changed")
+});
+
+$('.populateSavedEvents').on('click', function() {
+ console.log("you clickedhere")
+});
+
 //Names of elements
 
 var timeBlockcontainer = $(".container"); 
