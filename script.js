@@ -41,7 +41,7 @@ $('.changeEvent').on('click', function() {
 });
 
 $('.populateSavedEvents').on('click', function() {
- console.log("you clickedhere")
+ console.log("you clicked here")
 });
 
 //Names of elements
@@ -58,7 +58,7 @@ var timesArr= ["9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 for (var i=1; i<timesArr.length; i++){
     var newTimeBlock= $("#9AM").clone();
     newTimeBlock.attr("id", timesArr[i]); 
-    newtimeBlock.children(".row").attr("style", "white-space: pre-Wrap"); 
+    newTimeBlock.children(".row").attr("style", "white-space: pre-Wrap"); 
     newTimeBlock.children(".row").children(".hour").text(timesArr[i]); 
     newTimeBlock.appendTo(".container"); 
 
