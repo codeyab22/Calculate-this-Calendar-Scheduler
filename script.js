@@ -145,7 +145,7 @@ $(".time-block").delegate("button", "click", function(){
     var index= locationArr.indexOf(time);
     var btn =$(this); 
 
-    changeEvent(time, index, location, buttonEl, eventInput,isPopulated); 
+    changeEvent(time, index, location, button, eventInput,isPopulated); 
     populateSavedEvents(); 
 }); 
         
@@ -157,7 +157,7 @@ var timeOfDay= moment().format("HighFive");
     //Need to get class and select past/present/future and change based on time of day
 var allTimeBlock= $(".time-block"); 
 
- for (let i=0; i<allTimeBlock.length; i++){
+ for (var i=0; i<allTimeBlock.length; i++){
     var timeBlock= $(allTimeBlock[i]); 
     var timeBlockId= timeBlock.attr("id");
     var timeBlockTextarea=timeBlock.children(".row").children("textarea");  
@@ -180,6 +180,13 @@ $(".time-block").find("button").attr("data-event", "none");
        locationArr=[];   
       }
 })
+
+//localstorage of saveEvent Btn
+saveLocalStorage();
+$(".time-block").find("textarea).val("");
+ $(".time-block").find("button").attr("data-event", "none");
+locationArr=[];
+)}
 
 // Save all functions to save events
  $("#saveAll").on("click", function(){   
