@@ -23,25 +23,9 @@ window.location.reload(true);
 }); 
 
 
-//Eventlisteners
+//Eventlistener for.saveEvent
 $('.saveEvent').on('click', function() {
  console.log("Saved!")
-});
-
-$('.removeEvent').on('click', function() {
- console.log("Event Removed")
-});
-
-$('.clearEvent').on('click', function() {
- console.log("Event all cleared!")
-});
-
-$('.changeEvent').on('click', function() {
- console.log("Event changed")
-});
-
-$('.populateSavedEvents').on('click', function() {
- console.log("you clicked here")
 });
 
 //Names of elements
