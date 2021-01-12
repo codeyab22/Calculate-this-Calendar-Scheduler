@@ -203,7 +203,6 @@ saveLocalStorage();
 $(".time-block").find("textarea).val("");
  $(".time-block").find("button").attr("data-event", "none");
 locationArr=[];
-)}
 
 // Save all functions to save events
  $("#saveAll").on("click", function(){   
