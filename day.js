@@ -14,7 +14,7 @@ function checkTime() {
  var now = parsInt().hours()
 }
     console.log(now)
-   
+)
 $(".time-block").each(function() {
 var blockHour = parseInt($(this).attr("data-hour"));
     console.log(blockHour)
