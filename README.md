@@ -11,8 +11,9 @@ everything at that moment.It helps my undestanding of how functions and methods 
 
 Problem(s) it solves: syntax/grammatical errors, spacing/formatting, argument list, scoping, Undefined variables and functions
 
-This is the repo to my website: https://github.com/codeyab22/Calculate-this-Day-Calendar-Planner
-Check out this link to my website: 
+This is the link to the repo:https://github.com/codeyab22/Calculate-this-Day-Calendar-Planner
+Check out of this website:https://github.com/codeyab22/Calculate-this-Day-Calendar-Planner
+
 This is a relaxed design of my website:
 ![image](https://drive.google.com/uc?export=view&id=12In7-_JqZ9-6YF8DfItRexrBsbinYKfe)
 
