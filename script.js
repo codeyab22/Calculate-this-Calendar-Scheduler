@@ -160,7 +160,7 @@ $(".time-block").delegate("button", "click", function(){
     var index= locationArr.indexOf(time);
     var btn =$(this); 
 
-   // changeEvent(time, index, location, btn, eventInput,isPopulated);
+    // changeEvent(time, index, location, btn, eventInput,isPopulated);
     
     // store in localstorage
     storageData.push({
@@ -168,7 +168,7 @@ $(".time-block").delegate("button", "click", function(){
         text: eventInput
     })
 
-    localStorage.setItem('calendarData', JSON.stringify(storageData));
+ localStorage.setItem('calendarData', JSON.stringify(storageData));
 
 
     populateSavedEvents(); 
