@@ -1,6 +1,9 @@
 //Adia's Calculate-this-Day-Calendar-Planner
 console.log("script");
 
+// global variable for the contents of localstorage
+var storageData = JSON.parse(localStorage.getItem('calendarData')) || [];
+
 $(document).ready(function(){
     var time = moment().format("h:mm:ss");
     var timeSplit = time.split(":"); 
@@ -34,7 +37,7 @@ var timeBlockcontainer = $(".container");
 var todaysDate= $("#currentDay"); 
 
 //Formed current date
-todaysDate.text(moment().format("dddd, do, YYYY")); 
+todaysDate.text(moment().format("MMMM DD, YYYY")); 
 
 //Formed time blocks
 var timesArr= ["9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"]; 
@@ -54,27 +57,36 @@ var locationArr = [];
 
 //Formed a function populateSavedEvents
 function populateSavedEvents(){
-    savedDayPlans= localStorage.getItem("savedDayPlans"); 
-    locationArr=[]; 
-    if (savedDayPlans === null || savedDayPlans=== "") {
-        savedDayPlans = []; 
-    } else {
-        savedDayPlans = JSON.parse(savedDayPlans); 
-        for (i=0; i<savedDayPlans.length; i++) {
-            locationArr.push(savedDayPlans[i].time); 
+    // savedDayPlans= localStorage.getItem("calendarData"); 
+    // locationArr=[]; 
+    // if (savedDayPlans === null || savedDayPlans=== "") {
+    //     savedDayPlans = []; 
+    // } else {
+    //     savedDayPlans = JSON.parse(savedDayPlans); 
+    //     for (i=0; i<savedDayPlans.length; i++) {
+    //         locationArr.push(savedDayPlans[i].time); 
+    //     }
+    // }
+    
+    // for (var i=0; i<locationArr.length; i++) {
+    //     var timeBlockid = "#"+locationArr[i]; 
+    //     var timeBlock = $(timeBlockid).children(".row").children("textarea"); 
+    //     $(timeBlockid).children(".row").children("btn").attr("data-event", "yes"); 
+    //     timeBlock.val(savedDayPlans[i].event); 
+    // }    
+
+    for (i = 9; i <= 17; i++) {
+        for(j = 0; j < storageData.length; j++) {
+            if(storageData[j].time == i) {
+                $('#'+i).val(storageData[j].text)
+                // $('#15').val(storageData[j].text)
+            }
         }
     }
-    
-    for (var i=0; i<locationArr.length; i++) {
-        var timeBlockid = "#"+locationArr[i]; 
-        var timeBlock = $(timeBlockid).children(".row").children("textarea"); 
-        $(timeBlockid).children(".row").children("btn").attr("data-event", "yes"); 
-        timeBlock.val(savedDayPlans[i].event); 
-    }    
 }
-
+​
 populateSavedEvents(); 
-
+​
 //Formed a clearLocalStorage function
 
 function clearLocalStorage() {
@@ -109,7 +121,7 @@ function clearEvent(isClear,index,location,btn){
     } 
     console.log("The data-event is set to "+btn.attr("data-event") + " at " +btn.siblings("p").text()); 
 }
-
+​
 function changeEvent(time, index, location, btn,eventInput, isPopulated){
     if (eventInput.trim() === "" && isPopulated === "yes"){
         var isSaved= confirm("At "+time+": Would you like to clear the event '"+savedDayPlans[index].event+"' ?"); 
@@ -139,13 +151,26 @@ function changeEvent(time, index, location, btn,eventInput, isPopulated){
 $(".time-block").delegate("button", "click", function(){
     event.preventDefault();
     var eventInput= $(this).siblings("textarea").val(); 
-    var time= $(this).siblings("p").text(); 
+    // var time= $(this).siblings("p").text(); 
+    var time = $(this).siblings("textarea").attr('id');
+
+    console.log(time)
     var location = $(this).siblings("textarea"); 
     var isPopulated= $(this).attr("data-event"); 
     var index= locationArr.indexOf(time);
     var btn =$(this); 
 
-    changeEvent(time, index, location, button, eventInput,isPopulated); 
+    // changeEvent(time, index, location, btn, eventInput,isPopulated);
+    
+    // store in localstorage
+    storageData.push({
+        time: time,
+        text: eventInput
+    })
+
+    localStorage.setItem('calendarData', JSON.stringify(storageData));
+
+
     populateSavedEvents(); 
 }); 
         
@@ -153,7 +178,7 @@ $(".time-block").delegate("button", "click", function(){
 
     //getting the current time of day
 var timeOfDay= moment().format("HighFive");
-var timeofHour=moment().format("HighFive");
+var timeOfHour=moment().format("HighFive");
 
     //Need to get past/present/future classes for time of day by creating a loop
 var allTimeBlock= $(".time-block"); 
@@ -199,7 +224,7 @@ $(".time-block").find("button").attr("data-event", "none");
 })
 
 //localstorage of saveEvent Btn
-saveLocalStorage();
+// saveLocalStorage();
 // $(".time-block").find("textarea).val("");
 // $(".time-block").find("button").attr("data-event", "none");
 locationArr=[];
@@ -221,3 +246,22 @@ locationArr=[];
     alert("No unsaved changed. Restored"); 
  }); 
 
+
+ // function for changing colors based on time
+ function changeColors () {
+
+    var currentHour = moment().format("H");
+
+     for(i = 9; i <= 17; i++) {
+
+        if(i < currentHour) {
+            $('#'+i).addClass('past');
+        } else if (i == currentHour) {
+            $('#'+i).addClass('present');
+        } else if(i > currentHour) {
+            $('#'+i).addClass('future');
+        } 
+     }
+ }
+
+ changeColors();
