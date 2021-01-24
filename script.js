@@ -160,7 +160,7 @@ $(".time-block").delegate("button", "click", function(){
     var index= locationArr.indexOf(time);
     var btn =$(this); 
 
-    // changeEvent(time, index, location, btn, eventInput,isPopulated);
+   // changeEvent(time, index, location, btn, eventInput,isPopulated);
     
     // store in localstorage
     storageData.push({
@@ -171,7 +171,7 @@ $(".time-block").delegate("button", "click", function(){
     localStorage.setItem('calendarData', JSON.stringify(storageData));
 
 
-  populateSavedEvents(); 
+    populateSavedEvents(); 
 }); 
         
 // Declaring variables to change color based on time functions
