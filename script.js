@@ -84,9 +84,9 @@ function populateSavedEvents(){
         }
     }
 }
-​
+
 populateSavedEvents(); 
-​
+
 //Formed a clearLocalStorage function
 
 function clearLocalStorage() {
@@ -121,7 +121,7 @@ function clearEvent(isClear,index,location,btn){
     } 
     console.log("The data-event is set to "+btn.attr("data-event") + " at " +btn.siblings("p").text()); 
 }
-​
+
 function changeEvent(time, index, location, btn,eventInput, isPopulated){
     if (eventInput.trim() === "" && isPopulated === "yes"){
         var isSaved= confirm("At "+time+": Would you like to clear the event '"+savedDayPlans[index].event+"' ?"); 
