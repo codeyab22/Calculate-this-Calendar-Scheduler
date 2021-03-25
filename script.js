@@ -177,40 +177,44 @@ $(".time-block").delegate("button", "click", function(){
 // Declaring variables to change color based on time functions
 
     //getting the current time of day
-var timeOfDay= moment().format("HighFive");
-var timeOfHour=moment().format("HighFive");
+var timeOfDay= moment().format("H");
+var timeOfHour=moment().format("H");
+
+timeOfDay = 10;
 
     //Need to get past/present/future classes for time of day by creating a loop
-var allTimeBlock= $(".time-block"); 
+// var allTimeBlock= $(".time-block"); 
 
- for (var i=0; i<allTimeBlock.length; i++){
-    var timeBlock= $(allTimeBlock[i]); 
-    var timeBlockId= timeBlock.attr("id");
-    var timeBlockTextarea=timeBlock.children(".row").children("textarea");  
-    if (timeBlockId === timeOfDay){
-        timeBlockTextarea.addClass("present"); 
-    } else if (moment(timeBlockId, "HighFive").isBefore()) {
-        timeBlockTextarea.addClass("past"); 
-    } else if (moment(timeBlockId, "HighFive").isAfter()) {
-        timeBlockTextarea.addClass("future"); 
-    }
-}
+//  for (var i=0; i<allTimeBlock.length; i++){
+//     var timeBlock= $(allTimeBlock[i]); 
+//     var timeBlockId= timeBlock.attr("data-hour");
+//     var timeBlockTextarea=timeBlock.children(".row").children("textarea");  
+    
+//     console.log(timeBlockId + ' vs. ' + timeOfDay)
+//     if (timeBlockId === timeOfDay){
+//         timeBlockTextarea.addClass("present"); 
+//     } else if (timeBlockId <= timeOfDay) {
+//         timeBlockTextarea.addClass("past"); 
+//     } else if (timeBlockId >= timeOfDay) {
+//         timeBlockTextarea.addClass("future"); 
+//     }
+// }
 
 //Need to get past/present/future classes for time of hour by creating a loop  
-var allTimeBlockhour=$(".time-blockhour");
+// var allTimeBlockhour=$(".time-blockhour");
 
- for (var i=0; i<allTimeBlock.length; i++){
-    var timeBlockhour= $(allTimeBlockhour[i]); 
-    var timeBlockhourId= timeBlock.attr("id");
-    var timeBlockTextarea=timeBlock.children(".row").children("textarea");  
-    if (timeBlockId === timeOfHour){
-        timeBlockTextarea.addClass("present"); 
-    } else if (moment(timeBlockhourId, "HighFive").isBefore()) {
-        timeBlockTextarea.addClass("past"); 
-    } else if (moment(timeBlockhourId, "HighFive").isAfter()) {
-        timeBlockTextarea.addClass("future"); 
-    }
-}
+//  for (var i=0; i<allTimeBlock.length; i++){
+//     var timeBlockhour= $(allTimeBlockhour[i]); 
+//     var timeBlockhourId= timeBlock.attr("id");
+//     var timeBlockTextarea=timeBlock.children(".row").children("textarea");  
+//     if (timeBlockId === timeOfHour){
+//         timeBlockTextarea.addClass("present"); 
+//     } else if (moment(timeBlockhourId, "HighFive").isBefore()) {
+//         timeBlockTextarea.addClass("past"); 
+//     } else if (moment(timeBlockhourId, "HighFive").isAfter()) {
+//         timeBlockTextarea.addClass("future"); 
+//     }
+// }
    
 //clear button remove events
 
@@ -253,6 +257,8 @@ locationArr=[];
     var currentHour = moment().format("H");
 
      for(i = 9; i <= 17; i++) {
+
+        console.log(i + " vs. " + currentHour)
 
         if(i < currentHour) {
             $('#'+i).addClass('past');
