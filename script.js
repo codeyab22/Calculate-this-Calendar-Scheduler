@@ -271,3 +271,4 @@ locationArr=[];
  }
 
  changeColors();
+
