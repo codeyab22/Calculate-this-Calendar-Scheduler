@@ -254,7 +254,7 @@ locationArr=[];
  // function for changing colors based on time
  function changeColors () {
 
-    var currentHour = moment().format("H");
+    var currentHour = 10;
 
      for(i = 9; i <= 17; i++) {
 
