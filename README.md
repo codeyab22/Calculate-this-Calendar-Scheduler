@@ -24,7 +24,8 @@ Link to the repo:https://github.com/codeyab22/Calculate-this-Day-Calendar-Planne
 Link of the deployed website: https://github.com/codeyab22/Calculate-this-Day-Calendar-Planner
 
 This is a relaxed design of my website:
-![image](https://drive.google.com/uc?export=view&id=12In7-_JqZ9-6YF8DfItRexrBsbinYKfe)
+
+![image](https://drive.google.com/uc?export=view&id=1IWwNB6Sah60NiqWbb0-bJSXCHh3Pzuwp)
 
 
 # Author(s)
